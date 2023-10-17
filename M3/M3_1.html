@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Hitung faktorial dari input</h1>
+    <h2>Masukkan sembarang angka</h2>
+</head>
+<body>   
+    <input type="number" id="num">
+    <button onclick="klik()"> click! </button><br>  
+    <p id="out"></p>
+
+        <script>
+            function factorialized (num) {
+                if (num < 0) {
+                    return "error";
+                }
+
+                else if (num == 0){
+                    return 1;
+                }
+
+                else {
+                    return num * factorialized (num - 1);
+                }
+            }
+        </script>
+
+        <script>
+            function klik() {
+                var num = document.getElementById("num").value;
+                var res = factorialized(num);
+                var out ="angka faktorial dari " + num + " adalah : " + res;
+                document.getElementById("out").innerHTML = out;
+            }
+        </script>  
+</body>
+</html>

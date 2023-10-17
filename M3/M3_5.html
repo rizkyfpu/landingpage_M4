@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Bilangan Fibonacci</h1>
+    <p> Masukkan angka </p>
+</head>
+<body>   
+    <input type="number" id="num">
+    <button onclick="klik()"> Cek! </button><br>  
+    <p id="out"></p>
+
+        <script>
+            function primeCheck (num, fib_num) {
+                let num1 = 0, num2 = 1, adv;
+
+                for (let i = 1; i <= num; i++) {
+                    fib_num.push(num1);
+                    adv = num1 + num2;
+                    num1 = num2;
+                    num2 = adv;
+                }    
+            }
+        </script>
+
+        <script>
+            function klik() {
+                var num = document.getElementById("num").value;
+                var fib_num = [];
+                primeCheck(num, fib_num);
+                var out ="Bilangan fibonacci hingga urutan ke-" + num + " adalah : " + fib_num;
+                document.getElementById("out").innerHTML = out;
+            }
+        </script>  
+</body>
+</html>

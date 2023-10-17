@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Bilangan Prima</h1>
+    <p> Masukkan angka</p>
+</head>
+<body>   
+    <input type="number" id="num">
+    <button onclick="klik()"> Cek! </button><br>  
+    <p id="out"></p>
+
+        <script>
+            function primeCheck (num, prime_num) {
+                for (let i=0; i<=num; i++) {
+                    var isPrime = true;
+
+                    for (let j=2; j<i; j++) {
+                        if (i % j == 0) {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+
+                if (i>1 && isPrime) {
+                    prime_num.push(i);
+                    }
+                }
+                return 0;     
+            }
+        </script>
+
+        <script>
+            function klik() {
+                var num = document.getElementById("num").value;
+                var prime_num = [];
+                primeCheck(num, prime_num);
+                var out ="Bilangan prima kurang dari " + num + " adalah : " + prime_num;
+                document.getElementById("out").innerHTML = out;
+            }
+        </script>  
+</body>
+</html>
